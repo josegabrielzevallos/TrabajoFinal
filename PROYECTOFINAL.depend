@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1480402974 source:c:\users\honori\desktop\proyectofinal\main.cpp
+	"JUEGO.h"
+
+1480402854 c:\users\honori\desktop\proyectofinal\include\juego.h
+	"CORAZONES.h"
+	"BALA.h"
+	<list>
+
+1480367628 c:\users\honori\desktop\proyectofinal\include\corazones.h
+	"AST.h"
+
+1480367628 c:\users\honori\desktop\proyectofinal\include\ast.h
+	"NAVE.h"
+
+1480366054 c:\users\honori\desktop\proyectofinal\include\nave.h
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<stdlib.h>
+	<iostream>
+
+1480367628 c:\users\honori\desktop\proyectofinal\include\bala.h
+	"AST.h"
+
+1480367455 source:c:\users\honori\desktop\proyectofinal\src\ast.cpp
+	"AST.h"
+
+1480397564 source:c:\users\honori\desktop\proyectofinal\src\bala.cpp
+	"BALA.h"
+
+1480366054 source:c:\users\honori\desktop\proyectofinal\src\corazones.cpp
+	"CORAZONES.h"
+
+1480366384 source:c:\users\honori\desktop\proyectofinal\src\nave.cpp
+	"NAVE.h"
+
+1480404771 source:c:\users\honori\desktop\proyectofinal\src\juego.cpp
+	<fstream>
+	"JUEGO.h"
+

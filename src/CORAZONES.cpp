@@ -1,16 +1,26 @@
-#include "CORAZONES.h"
+#include<stdio.h>
+#include<windows.h>
+#include<conio.h>
+#include<stdlib.h>
+#include <iostream>
+using namespace std;
 
-CORAZONES::CORAZONES(int x, int y):AST(x,y){}
+#include "../include/CORAZONES.h"
+template<class T,class D>
 
-void CORAZONES::pintar()
+CORAZONES<T,D>::CORAZONES(T x, T y):AST(x,y){}
+template<class T,class D>
+
+void CORAZONES<T,D>::pintar()
 {
     color(12);
     gotoxy(x,y); printf("%c",3);
     color(7);
 }
 
+template<class T,class D>
 
-void CORAZONES::mover()
+void CORAZONES<T,D>::mover()
 {
     gotoxy(x,y); printf(" ");
 	y++;
@@ -21,8 +31,9 @@ void CORAZONES::mover()
 	}
 	pintar();
 }
+template<class T,class D>
 
-void CORAZONES::choque(NAVE &N)
+void CORAZONES<T,D>::choque(D &N)
 {
     if( x >= N.X() and x < N.X()+6 and y >= N.Y() and y < N.Y()+2)
     {
@@ -42,8 +53,12 @@ void CORAZONES::choque(NAVE &N)
 
 
 //bool fuera(){cout << "Yo TAMPOCO :,v" << endl;}
+template<class T,class D>
 
-CORAZONES::~CORAZONES()
+CORAZONES<T,D>::~CORAZONES()
 {
     ///dtor
 }
+
+template class CORAZONES<int,NAVE>;
+

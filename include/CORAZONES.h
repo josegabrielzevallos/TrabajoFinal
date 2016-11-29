@@ -5,16 +5,17 @@
 
 void gotoxy(int x, int y);
 void color(int X);
+template<class T,class D>
 
-class CORAZONES:public AST
+class CORAZONES:public AST<int,NAVE>
 {
 
     public:
         CORAZONES(){}
-        CORAZONES(int, int);
+        CORAZONES(T, T);
         void pintar();
         void mover();
-        void choque(NAVE &);
+        void choque(D &);
 
         ~CORAZONES();
 

@@ -1,25 +1,37 @@
-#include "AST.h"
+#include<stdio.h>
+#include<windows.h>
+#include<conio.h>
+#include<stdlib.h>
+#include <iostream>
+using namespace std;
 
-AST::AST()
+#include "../include/AST.h"
+template<class T,class D>
+
+AST<T,D>::AST()
 {
     this->x = 0;
     this->y = 0;
 }
 ///AST(int _x, int _y):x(_x),y(_y){}
-AST::AST(int x, int y)
+template<class T,class D>
+
+AST<T,D>::AST(T x, T y)
 {
     this->x = x;
     this->y = y;
 }
+template<class T,class D>
 
-void AST::pintar(){
+void AST<T,D>::pintar(){
     color(6);
 	gotoxy(x,y); printf("%c",184);
     color(7);
 
 }
+template<class T,class D>
 
-void AST::mover(){
+void AST<T,D>::mover(){
 	gotoxy(x,y); printf(" ");
 	y++;
 	if(y > 32){
@@ -30,8 +42,9 @@ void AST::mover(){
 	pintar();
 
 }
+template<class T,class D>
 
-void AST::choque(NAVE &N){
+void AST<T,D>::choque(D &N){
 	if( x >= N.X() and x < N.X()+6 and y >= N.Y() and y < N.Y()+2){
 		N.COR();
 		N.borrar();
@@ -43,7 +56,14 @@ void AST::choque(NAVE &N){
 	}
 
 }
+template<class T,class D>
 
-bool AST::fuera(){cout << "no hago nada :v" << endl;}
+bool AST<T,D>::fuera(){cout << "no hago nada :v" << endl;}
+template<class T,class D>
 
-AST::~AST(){ }
+AST<T,D>::~AST(){ }
+template class AST<int,NAVE>;
+
+
+
+

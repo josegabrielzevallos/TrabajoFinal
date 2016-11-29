@@ -5,24 +5,21 @@
 
 void gotoxy(int x, int y);
 void color(int X);
-
+template<class T,class D>
 class AST
 {
     protected:
-        int x,y;
+        T x,y;
     public:
         AST();
-        AST(int , int );
+        AST(T , T );
         virtual void pintar();
         virtual void mover();
-        virtual void choque(NAVE &);
+        virtual void choque(D &);
         virtual bool fuera();
-
-        int X(){ return x;}
-        int Y(){ return y;}
-
+        T X(){ return x;}
+        T Y(){ return y;}
         ~AST();
-
 };
 
 

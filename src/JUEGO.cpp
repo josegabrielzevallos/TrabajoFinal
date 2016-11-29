@@ -1,6 +1,12 @@
+#include<stdio.h>
+#include<windows.h>
+#include<conio.h>
+#include<stdlib.h>
 #include <fstream>
-#include "JUEGO.h"
+#include <iostream>
 using namespace std;
+#include "BALA.h"
+#include "JUEGO.h"
 
 ///VARIABLES O FUNCIONES GLOBALES
 
@@ -60,7 +66,6 @@ void borrarlimites()
     }
 
 }
-
 void puntajes()
 {
     ifstream source("puntajes1.txt");
@@ -112,6 +117,8 @@ int menu()
         return 0;
     }
 }
+
+
 ///CONTRUCTOR CLASE JUEGO
 JUEGO::JUEGO()
 {
@@ -127,17 +134,17 @@ JUEGO::JUEGO()
 	N.pintar();
 	N.pintar_corazones();
 
-    CORAZONES hp(rand()%75 + 3, rand()%5 + 4);
+    CORAZONES<int,NAVE> hp(rand()%75 + 3, rand()%5 + 4);
 
-	list<AST*> A ;
-	list<AST*>::iterator itA;
+	list<AST<int,NAVE>*> A ;
+	list<AST<int,NAVE>*>::iterator itA;
 	for(int i = 0; i<5; i++){
-		A.push_back(new AST(rand()%75 + 3, rand()%5 + 4));
+		A.push_back(new AST<int,NAVE>(rand()%75 + 3, rand()%5 + 4));
 	}
 
 	///POLIMORFISMO, vector de tipo AST, crea objetos BALA en linea 102
-	list<AST*> B;
-	list<AST*>::iterator it;
+	list<AST<int,NAVE>*> B;
+	list<AST<int,NAVE>*>::iterator it;
 
 	bool game_over = false;
 	int puntos = 0;
@@ -177,7 +184,7 @@ JUEGO::JUEGO()
 					delete(*it);
 					it = B.erase(it);
 
-					A.push_back(new AST(rand()%74 + 3, 4 ));
+					A.push_back(new AST<int,NAVE>(rand()%74 + 3, 4 ));
 					gotoxy((*itA)->X(),(*itA)->Y()); printf(" ");
 					delete(*itA);
 					itA = A.erase(itA);
